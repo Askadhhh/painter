@@ -1,5 +1,6 @@
 import "./style.css";
 
+const inputColor = document.getElementById("inputColor");
 const app = document.getElementById("app");
 
 Array(100)
@@ -14,6 +15,11 @@ Array(100)
 app.addEventListener("click", handlerClickDiv);
 
 function handlerClickDiv(event) {
+  if (event.target.className !== "cell") {
+    return;
+  }
+
+  event.target.style.backgroundColor = inputColor.value;
   // event.target - элемент на который кликнули
   // .style.backgroundColor - свойство фона элемента
   // .className - строка с именем класса у элемента
